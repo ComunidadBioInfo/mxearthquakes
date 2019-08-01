@@ -21,6 +21,6 @@ Authors@R:
            role = c("aut", "cre"),
            email = "Xool14@hotmail.com")
 Description: Database with the historical earthquakes in Mexico.
-License: What license it uses
+License: CC0
 Encoding: UTF-8
 LazyData: true

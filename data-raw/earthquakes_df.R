@@ -22,11 +22,7 @@ colnames(states) <- c("location","state")
 earthquakes_df <- earthquakes_df[,-7]
 earthquakes_df <- cbind(earthquakes_df, states)
 
-
-
-# earthquakes_df_states<-read.delim(earthquakes_df_states)
-
-
 save(earthquakes_df, file = "data/earthquakes_df.rda")
+
 
 

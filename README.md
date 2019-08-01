@@ -1,11 +1,16 @@
 # mxearthquakes
-CDSB2019 rsismosmx
-This is a package that shows the data of earthquakes in Mexico
-http://www.ssn.unam.mx/
-The data were since 1990
 
-To install
+This is an R package that shows the data of earthquakes in Mexico from 1900 to date.
+
+## Installation
 
 ```
+if (!require(devtools)) {
+    install.packages("devtools")
+}
 devtools::install_github("ComunidadBioInfo/mxearthquakes")
 ```
+
+## Source
+
+SSN (año actual): Universidad Nacional Autónoma de México, Instituto de Geofísica, Servicio Sismológico Nacional, México. Dirección electrónica: http://www.ssn.unam.mx .

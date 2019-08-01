@@ -11,4 +11,4 @@ earthquakes_names <- c("date", "hour", "magnitude", "latitude",
                     "longitude","depth", "location")
 colnames(earthquakes_df) <- earthquakes_names
 
-save(earthquakes_df, file = "data/earthquakes.rda")
+save(earthquakes_df, file = "data/earthquakes_df.rda")

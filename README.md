@@ -7,5 +7,5 @@ The data were since 1990
 To install
 
 ```
-devtools::install_github("ComunidadBioInfo/mxearthquakes/")
+devtools::install_github("ComunidadBioInfo/mxearthquakes")
 ```

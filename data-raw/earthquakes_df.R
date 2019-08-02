@@ -27,9 +27,6 @@ earthquakes_df$state <- str_replace_all(string = earthquakes_df$state,
 
 levels(as.factor(earthquakes_df$state))
 
-
-dplyr::mutate(Cultivo = recode(Cultivo,"amap" = "Amapola"))
-
 earthquakes_df <- earthquakes_df %>%
     dplyr::mutate(state = recode(state,"AGS" = "Aguascalientes")) %>%
     dplyr::mutate(state = recode(state,"BC" = "Baja California")) %>%

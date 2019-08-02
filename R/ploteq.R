@@ -26,7 +26,7 @@
 ploteq <- function(state1, year1){
     earthquakes_df1 <- earthquakes_df %>%
         dplyr::mutate(date1 = as.character(date)) %>%
-        readr::type_convert(cols(date = "c")) %>%
+        readr::type_convert(readr::cols(date = "c")) %>%
         tidyr::separate(col = date1, c("year", "months", "day")) %>%
         tidyr::drop_na() %>%
         dplyr::filter(state == state1) %>%

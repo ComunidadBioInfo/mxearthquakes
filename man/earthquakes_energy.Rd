@@ -2,20 +2,20 @@
 % Please edit documentation in R/earthquakes_energy.R
 \name{earthquakes_energy}
 \alias{earthquakes_energy}
-\title{**Earthquakes energy calculation**}
+\title{Earthquakes energy calculation}
 \usage{
 earthquakes_energy(x, y = "erg")
 }
 \arguments{
-\item{x}{A magnitude of earhquake in Richter magnitude scale}
+\item{x}{A magnitude of earthquake in Richter magnitude scale}
 
-\item{y}{A [character] to select units of energy: "arg" OR "joule"}
+\item{y}{A character to select units of energy: "erg" OR "joule"}
 }
 \value{
-A number of the energy
+A number of the energy in the units
 }
 \description{
-_This function calculate the energy of a magnitude earthquake_
+This function calculate the energy of a magnitude earthquake
 }
 \examples{
 a<-earthquakes_energy(6, "erg")

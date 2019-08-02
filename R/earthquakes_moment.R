@@ -1,5 +1,16 @@
-
-
+#' earthquake momentum calculator
+#'
+#' This function calculate the momentum of earthquake
+#'
+#' @param x A energy in "joules" or "erg"
+#' @param y Especific the units of energy of 'x' "joule" or "erg"
+#'
+#' @return
+#' A momentum of earthquake
+#' @export
+#'
+#' @examples
+#' earthquakes_moment(a, y = "erg")
 
 earthquakes_moment <- function(x, y = "joule") {
 
@@ -18,9 +29,7 @@ earthquakes_moment <- function(x, y = "joule") {
 
 }
 
-a<-earthquakes_energy(6)
 
-earthquakes_moment(a, y = "erg")
 
 
 

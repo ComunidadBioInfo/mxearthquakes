@@ -10,9 +10,13 @@
 #'   \item{latitude}{coordinates in geographic}
 #'   \item{longitude}{coordinates in geographic}
 #'   \item{depth}{depth in kilometer}
-#'   \item{location}{reference place of the epicenter}
+#'   \item{location}{local reference of the epicenter}
+#'   \item{state}{The state of Mexico in three words format}
 #'
 #'   ...
 #' }
+#' It is important to check the advise for the use of the data. Please check
+#' this site: http://www.ssn.unam.mx/aviso-legal/
+#'
 #' @source \url{http://www2.ssn.unam.mx:8080/catalogo/}
 "earthquakes_df"

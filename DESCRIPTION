@@ -32,5 +32,6 @@ Imports:
     dplyr,
     tidyr,
     knitr,
-    rmarkdown
+    rmarkdown,
+    readr
 VignetteBuilder: knitr

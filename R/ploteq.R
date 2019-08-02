@@ -1,17 +1,16 @@
 library(tidyverse)
 library(leaflet)
 
-earthquakes_df[earthquakes_df$state == "Morelos",]
 
-ploteq <- function(state1, year1, magnitude1){
+ploteq <- function(state1, year1){
     earthquakes_df1 <- earthquakes_df %>%
         mutate(date1 = as.character(date)) %>%
         type_convert(cols(date = "c")) %>%
         separate(col = date1, c("year", "months", "day")) %>%
         drop_na() %>%
         filter(state == state1) %>%
-        filter(year == year1) %>%
-        filter(magnitude > magnitude1)
+        filter(year == year1)
+    #    filter(magnitude > magnitude1)
 
 
     pal <- colorNumeric( palette = "plasma",
@@ -32,4 +31,4 @@ ploteq <- function(state1, year1, magnitude1){
 }
 
 #an example
-ploteq("Oaxaca", 2000 , 2)
+#ploteq("Veracruz", 2003)

@@ -32,4 +32,4 @@ ploteq <- function(state1, year1, magnitude1){
 }
 
 #an example
-ploteq("Oaxaca", 2000 , 2)
+ploteq("Oaxaca", 2017 , 2)

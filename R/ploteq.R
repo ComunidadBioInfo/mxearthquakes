@@ -1,11 +1,6 @@
 library(tidyverse)
 library(leaflet)
 
-data("earthquakes_df")
-head(earthquakes_df)
-class(earthquakes_df)
-str(earthquakes_df)
-
 earthquakes_df[earthquakes_df$state == "Morelos",]
 
 ploteq <- function(state1, year1, magnitude1){
@@ -36,4 +31,5 @@ ploteq <- function(state1, year1, magnitude1){
                          ))
 }
 
-ploteq("Oaxaca", 2000 , 4)
+#an example
+ploteq("Oaxaca", 2000 , 2)

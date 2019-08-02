@@ -1,0 +1,37 @@
+---
+title: "earthquakes_energy"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{earthquakes_energy}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+### Description
+This function calculate the energy of a magnitude earthquake in erg or juoles, and return the value of the energy. This function can be use to calculate the energy of the data.frame of the package "mxearthquakes"
+
+### Usage 
+`earthquakes_energy(x, y = "erg")`
+
+### Arguments
+ 
+ **x**  a magnitude of earthquake in Richter magnitude scale
+ 
+ **y**  a character to select units of energy: "erg" or "joule"
+
+```{r setup}
+library(mxearthquakes)
+```
+
+Examples
+```{r}
+earthquakes_energy(6, "erg")
+earthquakes_energy(6, "joule")
+```
+

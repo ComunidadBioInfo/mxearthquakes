@@ -3,7 +3,7 @@
 #' This function calculate the energy of a magnitude earthquake
 #'
 #' @param x A magnitude of earhquake in Richter magnitude scale
-#' @param y A [character] to select units of energy: "arg" OR "joule"
+#' @param y A [character] to select units of energy: "erg" OR "joule"
 #'
 #' @return
 #' A number of the energy in the units

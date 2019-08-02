@@ -4,6 +4,8 @@
 # Refer to functions with dplyr:: mutate
 #usethis::use_package("tidyr") # defoult
 # Refer to functions with tidyr:: mutate
+#usethis::use_package("readr") # defoult
+# Refer to functions with readr:: type_convert
 #usethis::use_package("leaflet", "Suggest")
 # Refer to functions with leaflet:: colorNumeric
 # Refer to functions with leaflet:: leaflet
@@ -13,7 +15,7 @@
 #'Ploteq an interactive map with leaflet for earthquakes in every state
 #'
 #' @param state1 States of Mexico with its standard short name style
-#' @param year1 The year of earthquake
+#' @param year1 The year of earthquake until 2019
 #'
 #' @return a map interactive with notes in every point
 #' @importFrom dplyr %>%
@@ -36,8 +38,8 @@ ploteq <- function(state1, year1){
                          domain = earthquakes_df1$magnitude)
 
     leaflet::leaflet() %>%
-        addTiles() %>%
-        addCircleMarkers(earthquakes_df1$longitude, earthquakes_df1$latitude,
+        leaflet::addTiles() %>%
+        leaflet::addCircleMarkers(earthquakes_df1$longitude, earthquakes_df1$latitude,
                          weight = 19, radius = earthquakes_df1$magnitude, stroke = F,
                          fillOpacity = 0.9,
                          color = pal(earthquakes_df1$magnitude),

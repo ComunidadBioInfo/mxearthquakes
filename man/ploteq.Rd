@@ -9,7 +9,7 @@ ploteq(state1, year1)
 \arguments{
 \item{state1}{States of Mexico with its standard short name style}
 
-\item{year1}{The year of earthquake}
+\item{year1}{The year of earthquake until 2019}
 }
 \value{
 a map interactive with notes in every point

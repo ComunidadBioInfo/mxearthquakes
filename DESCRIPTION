@@ -27,13 +27,10 @@ LazyData: true
 RoxygenNote: 6.1.1
 Suggests: 
     testthat (>= 2.1.0),
-<<<<<<< HEAD
     leaflet
 Imports: 
     dplyr,
     tidyr
-=======
     knitr,
     rmarkdown
 VignetteBuilder: knitr
->>>>>>> 07fc63013656d3e3f59e9a02bef00f02b43287ab

@@ -4,34 +4,36 @@ library(leaflet)
 data("earthquakes_df")
 head(earthquakes_df)
 class(earthquakes_df)
-str(earthquakes_df1)
+str(earthquakes_df)
 
-earthquakes_df1 <- earthquakes_df %>%
-    mutate(date = as.character(date)) %>%
-    type_convert(cols(date = "c")) %>%
-    separate(col = date, c("year", "months", "day")) %>%
-    drop_na() %>%
-    filter(state == " OAX") %>%
-    filter(year == "2019") %>%
-    filter(magnitude > 4)
+earthquakes_df[earthquakes_df$state == "Morelos",]
+
+ploteq <- function(state1, year1, magnitude1){
+    earthquakes_df1 <- earthquakes_df %>%
+        mutate(date1 = as.character(date)) %>%
+        type_convert(cols(date = "c")) %>%
+        separate(col = date1, c("year", "months", "day")) %>%
+        drop_na() %>%
+        filter(state == state1) %>%
+        filter(year == year1) %>%
+        filter(magnitude > magnitude1)
 
 
-head(earthquakes_df1)
-dim(earthquakes_df1)
+    pal <- colorNumeric( palette = "plasma",
+                         domain = earthquakes_df1$magnitude)
 
-magma <- c("#000004FF", "#1D1146FF", "#50127CFF", "#822681FF", "#B63779FF",
-           "#E65163FF", "#FB8761FF", "#FEC387FF", "#FCFDBFFF")
-pal <- colorFactor(magma, domain = earthquakes_df1$magnitude)
+    leaflet() %>%
+        addTiles() %>%
+        addCircleMarkers(earthquakes_df1$longitude, earthquakes_df1$latitude,
+                         weight = 19, radius = earthquakes_df1$magnitude, stroke = F,
+                         fillOpacity = 0.9,
+                         color = pal(earthquakes_df1$magnitude),
+                         popup = paste(sep = " ",
+                                       "State:",earthquakes_df1$state,"<br/>",
+                                       "Local place:",earthquakes_df1$location,"<br/>",
+                                       "Date:",earthquakes_df1$date, "<br/>",
+                                       "Magnitude:", earthquakes_df1$magnitude
+                         ))
+}
 
-pal <- colorFactor(c("navy", "red"), domain = c("ship", "pirate"))
-
-leaflet() %>%
-    addTiles() %>%
-    addCircleMarkers(earthquakes_df1$longitude, earthquakes_df1$latitude,
-                    weight = 8, radius = 2*earthquakes_df1$magnitude, stroke = F, fillOpacity = 0.4,
-                    #color = ~pal(type),
-                    popup = paste(sep = " ",
-                                  "State:",earthquakes_df1$state,"<br/>",
-                                  "Local data:",earthquakes_df1$location,"<br/>",
-                                  "Date:",earthquakes_df1$date, "<br/>"
-                                  ))
+ploteq("Oaxaca", 2000 , 4)
